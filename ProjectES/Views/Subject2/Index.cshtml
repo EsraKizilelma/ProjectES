@@ -1,0 +1,8 @@
+﻿@model List<Subject>
+
+    <div> Subjectler Listeleniyor</div>
+    @foreach(var subject in Model)
+    {
+        <h2>@subject.SubjectName - @subject.SubjectType</h2>
+    }
+    <a asp-action="Create"> Create a new subject</a>

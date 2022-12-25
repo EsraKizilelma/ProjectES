@@ -1,0 +1,13 @@
+﻿@model Subject
+
+<form asp-action="Create" method="post">
+    <div>
+        <label asp-for="SubjectName"></label>
+        <input asp-for="SubjectName"></input>
+    </div>
+    <div>
+        <label asp-for="SubjectType"></label>
+        <input asp-for="SubjectType"></input>
+    </div>
+    <input type="submit" valur="Kaydet"></input>
+</form>
