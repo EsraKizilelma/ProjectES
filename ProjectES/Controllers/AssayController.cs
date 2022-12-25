@@ -30,6 +30,7 @@ namespace ProjectES.Controllers
 
         //    return View(a);
         //}
-
+        //
+        ///lütfen bu da düzgün çalıssin 
     }
 }
