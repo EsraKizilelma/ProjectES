@@ -1,0 +1,17 @@
+﻿@model List<Assay>
+
+<table class="table table-info" width="800">
+    <tr>
+        <th><label asp-for="@Model[0].AssayTitle"></label></th>
+        <th><label asp-for="@Model[0].Subj.SubjectName"></label></th>
+        <th><label asp-for="@Model[0].Subj.SubjectType"></label></th>
+    </tr>
+    @foreach(var item in Model)
+    {
+        <tr>
+            <td>@item.AssayTitle</td>
+            <td>@item.Subj.SubjectName</td>
+            <td>@item.Subj.SubjectType</td>
+        </tr>
+    }
+</table>
