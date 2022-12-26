@@ -30,13 +30,14 @@ namespace ProjectES.Controllers
 
         //    return View();
         //}
-        //[HttpPost]
-        //public IActionResult Create([Bind("SubjectName,SubjectType")] Subject a)
-        //{
-        //    _context.Add(a);
-        //    _context.SaveChanges();
-        //    return RedirectToAction("Index");
-        //}
+        [HttpPost]
+        public IActionResult Create([Bind("AssayId,AssayTitle,SubjectId")] Assay assay)
+        {
+            _context.Add(assay);
+            _context.SaveChanges();
+            ViewData["SubjectId"] = new SelectList(_context.Subjects, "SubjectId", "SubjectName", assay.SubjectId);
+            return RedirectToAction("Index");
+        }
         // GET: Kitap/Create
         public IActionResult Create()
         {
@@ -47,19 +48,19 @@ namespace ProjectES.Controllers
         // POST: Kitap/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("AssayId,AssayTitle,SubjectId")] Assay assay)
-        {
-            if (ModelState.IsValid)
-            {
-                _context.Add(assay);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
-            }
-            ViewData["SubjectId"] = new SelectList(_context.Subjects, "SubjectId", "YazarAd", assay.SubjectId);
-            return View(assay);
-        }
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public async Task<IActionResult> Create([Bind("AssayId,AssayTitle,SubjectId")] Assay assay)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        _context.Add(assay);
+        //        await _context.SaveChangesAsync();
+        //        return RedirectToAction(nameof(Index));
+        //    }
+        //    ViewData["SubjectId"] = new SelectList(_context.Subjects, "SubjectId", "SubjectName", assay.SubjectId);
+        //    return View(assay);
+        //}
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null || _context.Subjects == null)
