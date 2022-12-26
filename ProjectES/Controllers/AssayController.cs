@@ -20,9 +20,6 @@ namespace ProjectES.Controllers
             List<Assay> a = _context.Assays.Include(aa => aa.Subj).ToList();
 
             var assay = (from aa in _context.Assays where aa.Subj != null select aa).ToList();
-
-
-
             return View(assay);
         }
         //public IActionResult Create()
