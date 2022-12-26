@@ -13,13 +13,13 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.AssayTitle)
-            </th>
-            <th>
                 @Html.DisplayNameFor(model => model.Subj.SubjectName)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Subj.SubjectType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AssayTitle)
             </th>
             <th></th>
         </tr>
@@ -35,8 +35,11 @@
                     @Html.DisplayFor(modelItem => item.Subj.SubjectType)
                 </td>
                 <td>
-                    <a asp-action="Details" asp-route-id="@item.SubjectId">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.SubjectId">Delete</a>
+                    @Html.DisplayFor(modelItem => item.AssayTitle)
+                </td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@item.AssayId">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.AssayId">Delete</a>
                 </td>
             </tr>
         }
