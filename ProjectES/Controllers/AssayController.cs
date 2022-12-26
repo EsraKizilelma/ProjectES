@@ -60,39 +60,39 @@ namespace ProjectES.Controllers
         //}
         public async Task<IActionResult> Details(int? id)
         {
-            if (id == null || _context.Subjects == null)
+            if (id == null || _context.Assays == null)
             {
                 return NotFound();
             }
 
-            var subject = await _context.Subjects
-                .FirstOrDefaultAsync(m => m.SubjectId == id);
-            if (subject == null)
+            var assay = await _context.Assays
+                .FirstOrDefaultAsync(m => m.AssayId == id);
+            if (assay == null)
             {
                 return NotFound();
             }
 
-            return View(subject);
+            return View(assay);
         }
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id == null || _context.Subjects == null)
+            if (id == null || _context.Assays == null)
             {
                 return NotFound();
             }
 
-            var subject = await _context.Subjects.FindAsync(id);
-            if (subject == null)
+            var assay = await _context.Assays.FindAsync(id);
+            if (assay == null)
             {
                 return NotFound();
             }
-            return View(subject);
+            return View(assay);
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("SubjectId,SubjectName,SubjectType")] Subject subject)
+        public async Task<IActionResult> Edit(int id, [Bind("SubjectId,SubjectName,SubjectType")] Assay assay)
         {
-            if (id != subject.SubjectId)
+            if (id != assay.AssayId)
             {
                 return NotFound();
             }
@@ -101,12 +101,12 @@ namespace ProjectES.Controllers
             {
                 try
                 {
-                    _context.Update(subject);
+                    _context.Update(assay);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!SubjectExists(subject.SubjectId))
+                    if (!AssayExists(assay.AssayId))
                     {
                         return NotFound();
                     }
@@ -117,7 +117,7 @@ namespace ProjectES.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(subject);
+            return View(assay);
         }
         //**************
 
@@ -125,19 +125,19 @@ namespace ProjectES.Controllers
         // GET: Subject1/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id == null || _context.Subjects == null)
+            if (id == null || _context.Assays == null)
             {
                 return NotFound();
             }
 
-            var subject = await _context.Subjects
-                .FirstOrDefaultAsync(m => m.SubjectId == id);
-            if (subject == null)
+            var assay = await _context.Assays
+                .FirstOrDefaultAsync(m => m.AssayId == id);
+            if (assay == null)
             {
                 return NotFound();
             }
 
-            return View(subject);
+            return View(assay);
         }
 
         // POST: Subject1/Delete/5
@@ -145,23 +145,23 @@ namespace ProjectES.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            if (_context.Subjects == null)
+            if (_context.Assays == null)
             {
-                return Problem("Entity set 'ApplicationDbContext.Subjects'  is null.");
+                return Problem("Entity set 'ApplicationDbContext.Assays'  is null.");
             }
-            var subject = await _context.Subjects.FindAsync(id);
-            if (subject != null)
+            var assay = await _context.Assays.FindAsync(id);
+            if (assay != null)
             {
-                _context.Subjects.Remove(subject);
+                _context.Assays.Remove(assay);
             }
 
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool SubjectExists(int id)
+        private bool AssayExists(int id)
         {
-            return _context.Subjects.Any(e => e.SubjectId == id);
+            return _context.Assays.Any(e => e.AssayId == id);
         }
         //public IActionResult Index()
         //{
