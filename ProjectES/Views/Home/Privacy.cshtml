@@ -1,4 +1,5 @@
-﻿@{
+﻿@model IEnumerable<ProjectES.Models.Assay>
+@{
     ViewData["Title"] = "Ask Us";
     string makaleler = "mk1; mk2; mk3"; 
 }
@@ -6,3 +7,33 @@
 @await Component.InvokeAsync("MakaleListele2", makaleler)
 
 <p>Use this page to detail your site's privacy policy.</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.AssayTitle)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Subj.SubjectName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Subj.SubjectType)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Subj.SubjectName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Subj.SubjectType)
+                </td>
+                
+            </tr>
+        }
+    </tbody>
+</table>
