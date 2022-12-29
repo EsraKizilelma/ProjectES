@@ -1,0 +1,29 @@
+﻿@model IEnumerable<ProjectES.Models.Assay>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.AssayTitle)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AssayTitle)
+                </td>
+                
+            </tr>
+        }
+    </tbody>
+</table>
