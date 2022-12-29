@@ -27,7 +27,17 @@ builder.Services.AddIdentity<UserDetails, IdentityRole>()
 	.AddEntityFrameworkStores<ApplicationDbContext>();
 
 builder.Services.AddControllersWithViews();
+builder.Services.Configure<IdentityOptions>(options =>
+{
+	// Password settings.
+	options.Password.RequireDigit = false;
+	options.Password.RequireLowercase = true;
+	options.Password.RequireNonAlphanumeric = false;
+	options.Password.RequireUppercase = false;
+	options.Password.RequiredLength = 3;
+	options.Password.RequiredUniqueChars = 0;
 
+});
 
 builder.Services.AddAuthentication(
 		CertificateAuthenticationDefaults.AuthenticationScheme)
