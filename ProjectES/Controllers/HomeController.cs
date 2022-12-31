@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using ProjectES.Data;
 using ProjectES.Models;
@@ -19,6 +20,20 @@ namespace ProjectES.Controllers
         public HomeController(ApplicationDbContext context)
         {
             _context = context;
+        }
+        [HttpPost]
+        public IActionResult Create([Bind("AssayId,AssayTitle,SubjectId")] Assay assay)
+        {
+            _context.Add(assay);
+            _context.SaveChanges();
+            ViewData["SubjectId"] = new SelectList(_context.Subjects, "SubjectId", "SubjectName", assay.SubjectId);
+            return RedirectToAction("Privacy");
+        }
+        // GET: Kitap/Create
+        public IActionResult Create()
+        {
+            ViewData["SubjectId"] = new SelectList(_context.Subjects, "SubjectId", "SubjectName");
+            return View();
         }
 
 

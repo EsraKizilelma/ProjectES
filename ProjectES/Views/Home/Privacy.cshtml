@@ -1,12 +1,15 @@
 ﻿@model IEnumerable<ProjectES.Models.Assay>
 @{
     ViewData["Title"] = "Ask Us";
-    string makaleler = "mk1; mk2; mk3"; 
+    string makaleler = "mk1; mk2; mk3";
 }
 <h1>@ViewData["Title"]</h1>
 @await Component.InvokeAsync("MakaleListele2", makaleler)
 
 <p>Use this page to detail your site's privacy policy.</p>
+<p>
+    <a asp-action="Create">Create New Assay</a>
+</p>
 <table class="table">
     <thead>
         <tr>
@@ -35,7 +38,7 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.Subj.SubjectType)
                 </td>
-                
+
             </tr>
         }
     </tbody>
