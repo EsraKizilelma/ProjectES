@@ -30,42 +30,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		  rel="stylesheet">
 </head>
 <h1>Details</h1>
-
-<div>
-    <h4>Subject</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.AssayTitle)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.AssayTitle)
-        </dd>
-</div>
-
 <div class="col-lg-4 card">
 	<div class="card-body">
-		<ul class="blog-icons my-4">
-		<li>
-			<a href="#">
-			<i class="far fa-calendar-alt"></i> Feb 23 .2022</a>
-		</li>
-		<li class="mx-2">
-			<a href="#">
-			<i class="far fa-comment"></i> 214</a>
-		</li>
-		<li>
-			<a href="#">
-			<i class="fas fa-eye"></i> 19604</a>
-			</li>
-		</ul>
 		<h4 class="card-title "> @Html.DisplayNameFor(model => model.AssayTitle)</h4>
 	<p class="card-text mb-3"> @Html.DisplayFor(model => model.AssayTitle) </p>
-	<a asp-action="Delete" asp-route-id="@Model.SubjectId">Delete</a>
+		<a asp-action="Delete" class="btn btn-primary read-m" asp-route-id="@Model.AssayId">Delete</a>
 </div>
-
-
 <div>
-    <a asp-action="Index">Back to List</a>
+		<a asp-action="Index" class="btn btn-primary read-m">Back to List</a>
 </div>
 <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
