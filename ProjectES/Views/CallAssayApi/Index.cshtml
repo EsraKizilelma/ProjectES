@@ -3,6 +3,7 @@
 @{
     ViewData["Title"] = "Index";
 }
+@inject LanguageService language
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -38,23 +39,28 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="row">
 			@foreach (var item in Model)
 			{
-				<div class="col-lg-4 card my-4">				
-					<div class="card-body">
-						<ul class="blog-icons my-4">
-							<li><a href="#"><i class="far fa-calendar-alt"></i> Mar 25 .2018</a></li>
-							<li class="mx-2"><a href="#"><i class="far fa-comment"></i> 21</a></li>
-							<li><a href="#"><i class="fas fa-eye"></i> 2000</a></li>
-						</ul>
-						<h5 class="card-title ">
-							<a href="single.html">Blog Post Title</a>
-									@Html.DisplayNameFor(model => model.AssayTitle)
-									@Html.DisplayFor(modelItem => item.AssayTitle)
-
-						</h5>
-						<p class="card-text mb-3">Lorem ipsum dolor sit amet consectetur adipisicing elit sedc dnmo eiusmod tempor incididunt.. </p>
-						<a href="single.html" class="btn btn-primary read-m">Read More</a>
+				<div class="col-lg-4 card">
+						<div class="card-body">
+							<ul class="blog-icons my-4">
+								<li>
+								<a href="#">
+								<i class="far fa-calendar-alt"></i> Feb 23 .2022</a>
+								</li>
+								<li class="mx-2">
+									<a href="#">
+									<i class="far fa-comment"></i> 214</a>
+								</li>
+								<li>
+									<a href="#">
+									<i class="fas fa-eye"></i> 19604</a>
+								</li>
+							</ul>
+							<h5 class="card-title ">@Html.DisplayFor(modelItem => item.Subj.SubjectType)</h5>
+								<h3> @Html.DisplayFor(modelItem => item.Subj.SubjectName)</h3>
+							<p class="card-text mb-3">@Html.DisplayFor(modelItem => item.AssayTitle) </p>
+								
+						</div>
 					</div>
-				</div>
 			}
 			</div>
 		</div>

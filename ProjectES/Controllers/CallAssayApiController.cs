@@ -16,7 +16,8 @@ namespace ProjectES.Controllers
     {
         public async Task<IActionResult> Index()
         {
-            List<Assay> Assays = new List<Assay>();
+			
+			List<Assay> Assays = new List<Assay>();
             var hhtc = new HttpClient();
             var response = await hhtc.GetAsync("https://localhost:7169/api/AssayApi");
             string resString = await response.Content.ReadAsStringAsync();
