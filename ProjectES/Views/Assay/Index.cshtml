@@ -30,45 +30,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
           rel="stylesheet">
 </head>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Subj.SubjectName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Subj.SubjectType)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.AssayTitle)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Subj.SubjectName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Subj.SubjectType)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.AssayTitle)
-                </td>
-                <td>
-                    <a asp-action="Details" asp-route-id="@item.AssayId">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.AssayId">Delete</a>
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>
 <section class="main-content-w3layouts-agileits">
 		<div class="container">
 			<h3 class="tittle">Blog Posts</h3>
@@ -96,11 +57,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							</ul>
 							<h5 class="card-title ">@Html.DisplayFor(modelItem => item.Subj.SubjectType)</h5>
 								<h3> @Html.DisplayFor(modelItem => item.Subj.SubjectName)</h3>
-							<p class="card-text mb-3">Lorem ipsum dolor sit amet consectetur adipisicing elit sedc dnmo eiusmod tempor incididunt.. </p>
-								<a asp-action="Details" asp-route-id="@item.AssayId" class="btn btn-primary read-m">@Html.DisplayFor(modelItem => item.AssayTitle)</a>
+							<p class="card-text mb-3">@Html.DisplayFor(modelItem => item.AssayTitle) </p>
+								<a asp-action="Details" asp-route-id="@item.AssayId" class="btn btn-primary read-m">Read More</a>
 						</div>
 					</div>
 				}
+				<a asp-action="Create" class="btn btn-primary read-m">Create New Assay</a>
 						<nav aria-label="Page navigation example">
 							<ul class="pagination justify-content-left mt-4">
 								<li class="page-item disabled">
