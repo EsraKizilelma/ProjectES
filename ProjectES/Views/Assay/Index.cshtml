@@ -3,6 +3,8 @@
 @{
     ViewData["Title"] = "Index";
 }
+@inject LanguageService language
+
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -32,7 +34,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 <section class="main-content-w3layouts-agileits">
 		<div class="container">
-			<h3 class="tittle">Blog Posts</h3>
+			<h3 class="tittle">@language.Getkey("Blog Posts")</h3>
 			<div class="inner-sec">
 				<!--left-->
 				<div class="left-blog-info-w3layouts-agileits text-left">
@@ -58,15 +60,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<h5 class="card-title ">@Html.DisplayFor(modelItem => item.Subj.SubjectType)</h5>
 								<h3> @Html.DisplayFor(modelItem => item.Subj.SubjectName)</h3>
 							<p class="card-text mb-3">@Html.DisplayFor(modelItem => item.AssayTitle) </p>
-								<a asp-action="Details" asp-route-id="@item.AssayId" class="btn btn-primary read-m">Read More</a>
+								<a asp-action="Details" asp-route-id="@item.AssayId" class="btn btn-primary read-m">@language.Getkey("Read More")</a>
 						</div>
 					</div>
 				}
-				<a asp-action="Create" class="btn btn-primary read-m">Create New Assay</a>
+				<a asp-action="Create" class="btn btn-primary read-m">@language.Getkey("Create New Assay")</a>
 						<nav aria-label="Page navigation example">
 							<ul class="pagination justify-content-left mt-4">
 								<li class="page-item disabled">
-									<a class="page-link" href="#" tabindex="-1">Previous</a>
+									<a class="page-link" href="#" tabindex="-1">@language.Getkey("Previous")</a>
 								</li>
 								<li class="page-item">
 									<a class="page-link" href="#">1</a>
@@ -78,7 +80,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									<a class="page-link" href="#">3</a>
 								</li>
 								<li class="page-item">
-									<a class="page-link" href="#">Next</a>
+									<a class="page-link" href="#">@language.Getkey("Next")</a>
 								</li>
 							</ul>
 						</nav>

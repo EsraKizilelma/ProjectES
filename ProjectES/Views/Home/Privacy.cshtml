@@ -2,6 +2,7 @@
 @{
     ViewData["Title"] = "Ask Us";
 }
+@inject LanguageService language
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -62,6 +63,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     </tbody>
 </table>
 <p>
-    <a asp-action="Create" class="btn btn-primary read-m">Create New Assay</a>
+    <a asp-action="Create" class="btn btn-primary read-m">@language.Getkey("Create New Assay")</a>
 </p>
 <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />

@@ -1,6 +1,6 @@
 ﻿@page
 @model LoginModel
-
+@inject LanguageService language
 @{
 	ViewData["Title"] = "Log in";
 }
@@ -40,7 +40,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <body>
 	<section class="main-content-w3layouts-agileits">
 		<div class="container">
-			<h3 class="tittle">Log In Now</h3>
+			<h3 class="tittle">@language.Getkey("Log In Now")</h3>
 			<div class="row inner-sec">
 				<div class="login p-5 bg-light mx-auto w-50" style="background-color:#493963">
 					<form id="account" method="post">
@@ -61,7 +61,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								@Html.DisplayNameFor(m => m.Input.RememberMe)
 							</label>
 						</div>
-						<button type="submit" class="btn btn-light submit mb-4" style="background-color:aliceblue" bg-light>Log in</button>
+						<button type="submit" class="btn btn-light submit mb-4" style="background-color:aliceblue" bg-light>@language.Getkey("Log in")</button>
 					</form>
 				</div>
 			</div>

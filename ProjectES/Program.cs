@@ -25,6 +25,48 @@ builder.Services.AddIdentity<UserDetails, IdentityRole>()
 	.AddDefaultTokenProviders()
 	.AddDefaultUI()
 	.AddEntityFrameworkStores<ApplicationDbContext>();
+//*******
+builder.Services.AddControllersWithViews(); //**
+builder.Services.AddSingleton<LanguageService>();
+
+builder.Services.AddLocalization(options => options.ResourcesPath = "Resources");
+
+builder.Services.AddMvc()
+	.AddViewLocalization()
+	.AddDataAnnotationsLocalization(options =>
+	{
+		options.DataAnnotationLocalizerProvider = (type, factory) =>
+		{
+
+			var assemblyName = new AssemblyName(typeof(ShareResource).GetTypeInfo().Assembly.FullName);
+
+			return factory.Create("ShareResource", assemblyName.Name);
+
+		};
+
+	});
+
+
+builder.Services.Configure<RequestLocalizationOptions>(
+	options =>
+	{
+		var supportedCultures = new List<CultureInfo>
+		{
+							new CultureInfo("en-US"),
+							new CultureInfo("de-DE"),
+							new CultureInfo("tr-TR"),
+		};
+
+
+
+		options.DefaultRequestCulture = new RequestCulture(culture: "tr-TR", uiCulture: "tr-TR");
+
+		options.SupportedCultures = supportedCultures;
+		options.SupportedUICultures = supportedCultures;
+		options.RequestCultureProviders.Insert(0, new QueryStringRequestCultureProvider());
+
+	});
+//*************
 
 builder.Services.AddControllersWithViews();
 builder.Services.Configure<IdentityOptions>(options =>
@@ -59,7 +101,10 @@ else
 }
 var options = app.Services.GetRequiredService<IOptions<RequestLocalizationOptions>>();
 app.UseRequestLocalization(options.Value);
-
+//******
+var locOptions = app.Services.GetService<IOptions<RequestLocalizationOptions>>();
+app.UseRequestLocalization(locOptions.Value);
+//*******
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 

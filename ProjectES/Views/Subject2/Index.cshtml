@@ -3,6 +3,7 @@
 @{
     ViewData["Title"] = "Index";
 }
+@inject LanguageService language
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -52,12 +53,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     @Html.DisplayFor(modelItem => item.SubjectType)
                 </td>
                 <td>
-                    <a asp-action="Details" asp-route-id="@item.SubjectId">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.SubjectId">Delete</a>
+                    <a asp-action="Details" asp-route-id="@item.SubjectId">@language.Getkey("Details")</a> |
+                    <a asp-action="Delete" asp-route-id="@item.SubjectId">@language.Getkey("Delete")</a>
                 </td>
             </tr>
         }
     </tbody>
 </table>
-<a asp-action="Create" class="btn btn-primary read-m">Create New Assay</a>
+<a asp-action="Create" class="btn btn-primary read-m">@language.Getkey("Create New Assay")</a>
 <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />

@@ -1,7 +1,7 @@
 ﻿@{
     ViewData["Title"] = "MARS";
-   
 }
+@inject LanguageService language
 <!--
 	Author: W3layouts
 	Author URL: http://w3layouts.com
@@ -49,44 +49,44 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							</a>
 						</div>
 						<h3>
-							Why Augmented Reality Is Revolutionizing Customer Service
+							@language.Getkey("Why Augmented Reality Is Revolutionizing Customer Service")
 						</h3>
 						<p>
-							The customer service representative on the British TV series The IT Crowd "Have you tried turning it off and on again?" he suggests. Frustrated laptop user struggling to understand agent on phone and issue remains unresolved
+							@language.Getkey("The customer service representative on the British TV series The IT Crowd Have you tried turning it off and on again? he suggests. Frustrated laptop user struggling to understand agent on phone and issue remains unresolved")
 						</p>
-						<a href="https://blog.dormakaba.com/tr/artirilmis-gercekligin-musteri-hizmetlerinde-devrim-yaratmasinin-nedeni/" class="btn btn-primary read-m">Read More</a>
+						<a href="https://blog.dormakaba.com/tr/artirilmis-gercekligin-musteri-hizmetlerinde-devrim-yaratmasinin-nedeni/" class="btn btn-primary read-m">@language.Getkey("Read More")</a>
 					</div>
 					<div class="row">
 						<div class="col-md-6 card mt-3">
 							<img class="card-img-top" src="~/CoreBlogTema/images/yuzalgi.jpg" alt="Card-image">
 							<div class="card-body">
-								<h5 class="card-title">Face Recognition</h5>
-								<p class="card-text mb-3">A facial recognition system[1] is a technology capable of matching a human face from a digital image or a video frame against a database of faces. Such a system is typically employed to authenticate users through ID verification services, and works by pinpointing and measuring facial features from a given image </p>
-								<a href="https://blog.dormakaba.com/tr/yuz-tanima-akilli-gecis-caginda-dunya-seyahati/" class="btn btn-primary read-m">Read More</a>
+								<h5 class="card-title">@language.Getkey("Face Recognition")</h5>
+								<p class="card-text mb-3">@language.Getkey("A facial recognition system[1] is a technology capable of matching a human face from a digital image or a video frame against a database of faces. Such a system is typically employed to authenticate users through ID verification services, and works by pinpointing and measuring facial features from a given image") </p>
+								<a href="https://blog.dormakaba.com/tr/yuz-tanima-akilli-gecis-caginda-dunya-seyahati/" class="btn btn-primary read-m">@language.Getkey("Read More")</a>
 							</div>
 						</div>
 						<div class="col-md-6 card mt-3">
 							<img class="card-img-top" src="~/CoreBlogTema/images/yapay.jpg" alt="Card-image">
 							<div class="card-body">
-								<h5 class="card-title">Artificial Intelligence</h5>
-								<p class="card-text mb-3">Artificial intelligence (AI) is a wide-ranging branch of computer science concerned with building smart machines capable of performing tasks that typically require human intelligence. AI is an interdisciplinary science with multiple approaches, but advancements in machine learning and deep learning are creating a paradigm shift in virtually every sector of the tech industry. </p>
-								<a href="https://blog.dormakaba.com/tr/?s=yapay+zeka" class="btn btn-primary read-m">Read More</a>
+								<h5 class="card-title">@language.Getkey("Artificial Intelligence")</h5>
+								<p class="card-text mb-3">@language.Getkey("Artificial intelligence (AI) is a wide-ranging branch of computer science concerned with building smart machines capable of performing tasks that typically require human intelligence. AI is an interdisciplinary science with multiple approaches, but advancements in machine learning and deep learning are creating a paradigm shift in virtually every sector of the tech industry.") </p>
+								<a href="https://blog.dormakaba.com/tr/?s=yapay+zeka" class="btn btn-primary read-m">@language.Getkey("Read More")</a>
 							</div>
 						</div>
 						<div class="col-md-6 card mt-3">
 							<img class="card-img-top" src="~/CoreBlogTema/images/robot.jpg" alt="Card-image">
 							<div class="card-body">
-								<h5 class="card-title">Robot</h5>
-								<p class="card-text mb-3">Artificial intelligence is a branch of computer science that seeks to develop technology to simulate the workings of the human brain. Combined with the field of robotics, AI has been used to develop and innovate intelligent machines that can be used for everything from manufacturing to assisting healthcare providers. </p>
-								<a href="https://blog.dormakaba.com/tr/dronlar-ile-santiye-hizmeti-nasil-yeni-zirvelere-tasinir/" class="btn btn-primary read-m">Read More</a>
+								<h5 class="card-title">@language.Getkey("Robot")</h5>
+								<p class="card-text mb-3">@language.Getkey("Artificial intelligence is a branch of computer science that seeks to develop technology to simulate the workings of the human brain. Combined with the field of robotics, AI has been used to develop and innovate intelligent machines that can be used for everything from manufacturing to assisting healthcare providers.") </p>
+								<a href="https://blog.dormakaba.com/tr/dronlar-ile-santiye-hizmeti-nasil-yeni-zirvelere-tasinir/" class="btn btn-primary read-m">@language.Getkey("Read More")</a>
 							</div>
 						</div>
 						<div class="col-md-6 card mt-3">
 							<img class="card-img-top" src="~/CoreBlogTema/images/mobil.jpg" alt="Card-image">
 							<div class="card-body">
-								<h5 class="card-title">Mobile </h5>
-								<p class="card-text mb-3">Mobile technology is technology that goes where the user goes. It consists of portable two-way communications devices, computing devices and the networking technology that connects them. </p>
-								<a href="https://blog.dormakaba.com/tr/?s=mobil" class="btn btn-primary read-m">Read More</a>
+								<h5 class="card-title">@language.Getkey("Mobile") </h5>
+								<p class="card-text mb-3">@language.Getkey("Mobile technology is technology that goes where the user goes. It consists of portable two-way communications devices, computing devices and the networking technology that connects them.") </p>
+								<a href="https://blog.dormakaba.com/tr/?s=mobil" class="btn btn-primary read-m">@language.Getkey("Read More")</a>
 							</div>
 						</div>
 					</div>
@@ -99,16 +99,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<img src="~/CoreBlogTema/images/data.jpg" class="img-fluid" alt="">
 						</div>
 						<div class="tech-btm">
-							<h4>Sign up to our newsletter</h4>
-							<p>Pellentesque dui, non felis. Maecenas male </p>
+							<h4>>@language.Getkey("Sign up to our newsletter")</h4>
+							<p>@language.Getkey("Pellentesque dui, non felis. Maecenas male") </p>
 							<form action="#" method="post">
 								<input type="email" placeholder="Email" required="">
-								<input type="submit" value="Subscribe">
+								<input type="submit" value="@language.Getkey("Subscribe")">
 							</form>
 
 						</div>
 						<div class="tech-btm widget_social">
-							<h4>Stay Connect</h4>
+							<h4>@language.Getkey("Stay Connect")</h4>
 							<ul>
 
 								<li>
@@ -140,7 +140,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							</ul>
 						</div>
 						<div class="single-gd my-5 tech-btm">
-							<h4>Our Progress</h4>
+							<h4>@language.Getkey("Our Progress")</h4>
 							<div class="progress">
 								<div class="progress-bar progress-bar-striped" role="progressbar" style="width: 10%" aria-valuenow="10" aria-valuemin="0"
 									 aria-valuemax="100"></div>
@@ -174,7 +174,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<div class="col-md-7 blog-grid-right">
 
 									<h5>
-										<a href="single.html">Pellentesque dui, non felis. Maecenas male non felis </a>
+										<a href="single.html">">@language.Getkey("Pellentesque dui, non felis. Maecenas male non felis") </a>
 									</h5>
 									<div class="sub-meta">
 										<span>
@@ -193,7 +193,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<div class="col-md-7 blog-grid-right">
 
 									<h5>
-										<a href="single.html">Pellentesque dui, non felis. Maecenas male non felis </a>
+										<a href="single.html">@language.Getkey("Pellentesque dui, non felis. Maecenas male non felis") </a>
 									</h5>
 									<div class="sub-meta">
 										<span>
@@ -211,7 +211,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								</div>
 								<div class="col-md-7 blog-grid-right">
 									<h5>
-										<a href="single.html">Pellentesque dui, non felis. Maecenas male non felis </a>
+										<a href="single.html">@language.Getkey("Pellentesque dui, non felis. Maecenas male non felis") </a>
 									</h5>
 									<div class="sub-meta">
 										<span>
@@ -230,7 +230,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<div class="col-md-7 blog-grid-right">
 
 									<h5>
-										<a href="single.html">Pellentesque dui, non felis. Maecenas male non felis </a>
+										<a href="single.html">@language.Getkey("Pellentesque dui, non felis. Maecenas male non felis") </a>
 									</h5>
 									<div class="sub-meta">
 										<span>
@@ -251,7 +251,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<div class="col-md-7 blog-grid-right">
 
 									<h5>
-										<a href="single.html">Pellentesque dui, non felis. Maecenas male non felis </a>
+										<a href="single.html">@language.Getkey("Pellentesque dui, non felis. Maecenas male non felis") </a>
 									</h5>
 									<div class="sub-meta">
 										<span>
@@ -269,7 +269,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								</div>
 								<div class="col-md-7 blog-grid-right">
 									<h5>
-										<a href="single.html">Pellentesque dui, non felis. Maecenas male non felis </a>
+										<a href="single.html">@language.Getkey("Pellentesque dui, non felis. Maecenas male non felis") </a>
 									</h5>
 									<div class="sub-meta">
 										<span>
@@ -293,16 +293,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-4 footer-grid-agileits-w3ls text-left">
-					<h3>About US</h3>
-					<p>Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. lacinia eget consectetur sed, convallis at tellus..</p>
+					<h3>@language.Getkey("About US")</h3>
+					<p>@language.Getkey("Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. lacinia eget consectetur sed, convallis at tellus.")</p>
 					<div class="read">
-						<a href="single.html" class="btn btn-primary read-m">Read More</a>
+						<a href="single.html" class="btn btn-primary read-m">@language.Getkey("Read More")</a>
 					</div>
 				</div>
 				<div class="col-lg-4 footer-grid-agileits-w3ls text-left">
 
 					<div class="tech-btm">
-						<h3>Latest Posts</h3>
+						<h3>>@language.Getkey("Latest Posts")</h3>
 						<div class="blog-grids row mb-3">
 							<div class="col-md-5 blog-grid-left">
 								<a href="single.html">
@@ -312,7 +312,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<div class="col-md-7 blog-grid-right">
 
 								<h5>
-									<a href="single.html">Pellentesque dui, non felis. Maecenas male non felis </a>
+									<a href="single.html">@language.Getkey("Pellentesque dui, non felis. Maecenas male non felis") </a>
 								</h5>
 								<div class="sub-meta">
 									<span>
@@ -331,7 +331,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<div class="col-md-7 blog-grid-right">
 
 								<h5>
-									<a href="single.html">Pellentesque dui, non felis. Maecenas male non felis </a>
+									<a href="single.html">@language.Getkey("Pellentesque dui, non felis. Maecenas male non felis") </a>
 								</h5>
 								<div class="sub-meta">
 									<span>
@@ -350,7 +350,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<div class="col-md-7 blog-grid-right">
 
 								<h5>
-									<a href="single.html">Pellentesque dui, non felis. Maecenas male non felis </a>
+									<a href="single.html">@language.Getkey("Pellentesque dui, non felis. Maecenas male non felis") </a>
 								</h5>
 								<div class="sub-meta">
 									<span>
@@ -364,7 +364,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</div>
 				<!-- subscribe -->
 				<div class="col-lg-4 subscribe-main footer-grid-agileits-w3ls text-left">
-					<h2>Signup to our newsletter</h2>
+					<h2>@language.Getkey("Signup to our newsletter")</h2>
 					<div class="subscribe-main text-left">
 						<div class="subscribe-form">
 							<form action="#" method="post" class="subscribe_form">
@@ -373,7 +373,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							</form>
 							<div class="clearfix"> </div>
 						</div>
-						<p>We respect your privacy.No spam ever!</p>
+						<p>@language.Getkey("We respect your privacy.No spam ever!")</p>
 					</div>
 					<!-- //subscribe -->
 				</div>
