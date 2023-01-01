@@ -3,7 +3,32 @@
 @{
     ViewData["Title"] = "Details";
 }
+<!DOCTYPE html>
+<html lang="zxx">
 
+<head>
+	<title>Weblog a Blogging Category Bootstrap responsive WebTemplate | About :: w3layouts</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
+	<meta name="keywords" content="Weblog a Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+
+	<script>
+		addEventListener("load", function () {
+			setTimeout(hideURLbar, 0);
+		}, false);
+
+		function hideURLbar() {
+			window.scrollTo(0, 1);
+		}
+	</script>
+	<link href="~/CoreBlogTema/css/bootstrap.css" rel='stylesheet' type='text/css' />
+	<link href="~/CoreBlogTema/css/single.css" rel='stylesheet' type='text/css' />
+	<link href="~/CoreBlogTema/css/style.css" rel='stylesheet' type='text/css' />
+	<link href="~/CoreBlogTema/css/fontawesome-all.css" rel="stylesheet">
+	<link href="//fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800"
+		  rel="stylesheet">
+</head>
 <h1>Details</h1>
 
 <div>
@@ -17,6 +42,30 @@
             @Html.DisplayFor(model => model.AssayTitle)
         </dd>
 </div>
+
+<div class="col-lg-4 card">
+	<div class="card-body">
+		<ul class="blog-icons my-4">
+		<li>
+			<a href="#">
+			<i class="far fa-calendar-alt"></i> Feb 23 .2022</a>
+		</li>
+		<li class="mx-2">
+			<a href="#">
+			<i class="far fa-comment"></i> 214</a>
+		</li>
+		<li>
+			<a href="#">
+			<i class="fas fa-eye"></i> 19604</a>
+			</li>
+		</ul>
+		<h4 class="card-title "> @Html.DisplayNameFor(model => model.AssayTitle)</h4>
+	<p class="card-text mb-3"> @Html.DisplayFor(model => model.AssayTitle) </p>
+	<a asp-action="Delete" asp-route-id="@Model.SubjectId">Delete</a>
+</div>
+
+
 <div>
     <a asp-action="Index">Back to List</a>
 </div>
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />

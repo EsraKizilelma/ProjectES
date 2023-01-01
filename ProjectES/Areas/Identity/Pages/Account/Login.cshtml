@@ -2,45 +2,123 @@
 @model LoginModel
 
 @{
-    ViewData["Title"] = "Log in";
+	ViewData["Title"] = "Log in";
 }
-
-<h1>@ViewData["Title"]</h1>
-<div class="row">
-    <div class="col-md-4">
-        <section>
-            <form id="account" method="post">
-                <h2>Use a local account to log in.</h2>
-                <hr />
-                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                <div class="form-floating">
-                    <input asp-for="Input.Email" class="form-control" autocomplete="username" aria-required="true" />
-                    <label asp-for="Input.Email" class="form-label"></label>
-                    <span asp-validation-for="Input.Email" class="text-danger"></span>
-                </div>
-                <div class="form-floating">
-                    <input asp-for="Input.Password" class="form-control" autocomplete="current-password" aria-required="true" />
-                    <label asp-for="Input.Password" class="form-label"></label>
-                    <span asp-validation-for="Input.Password" class="text-danger"></span>
-                </div>
-                <div>
-                    <div class="checkbox">
-                        <label asp-for="Input.RememberMe" class="form-label">
-                            <input class="form-check-input" asp-for="Input.RememberMe" />
-                            @Html.DisplayNameFor(m => m.Input.RememberMe)
-                        </label>
-                    </div>
-                </div>
-                <div>
-                    <button id="login-submit" type="submit" class="w-100 btn btn-lg btn-primary">Log in</button>
-                </div>
-                
-            </form>
-        </section>
-    </div>
-    
-</div>
 
 @section Scripts {
-    <partial name="_ValidationScriptsPartial" />
+	<partial name="_ValidationScriptsPartial" />
 }
+
+
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+	<title>Weblog a Blogging Category Bootstrap responsive WebTemplate | Login :: w3layouts</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
+	<meta name="keywords" content="Weblog a Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+
+	<script>
+		addEventListener("load", function () {
+			setTimeout(hideURLbar, 0);
+		}, false);
+
+		function hideURLbar() {
+			window.scrollTo(0, 1);
+		}
+	</script>
+	<link href="~/CoreBlogTema/css/bootstrap.css" rel='stylesheet' type='text/css' />
+	<link href="~/CoreBlogTema/css/single.css" rel='stylesheet' type='text/css' />
+	<link href="~/CoreBlogTema/css/style.css" rel='stylesheet' type='text/css' />
+	<link href="~/CoreBlogTema/css/fontawesome-all.css" rel="stylesheet">
+	<link href="//fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800"
+		  rel="stylesheet">
+</head>
+
+<body>
+	<section class="main-content-w3layouts-agileits">
+		<div class="container">
+			<h3 class="tittle">Log In Now</h3>
+			<div class="row inner-sec">
+				<div class="login p-5 bg-light mx-auto w-50" style="background-color:#493963">
+					<form id="account" method="post">
+						<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+						<div class="form-group">
+							<label asp-for="Input.Email" class="form-label" style="color:aliceblue"></label>
+							<input asp-for="Input.Email" class="form-control" autocomplete="username" aria-required="true" />
+							<span asp-validation-for="Input.Email" class="text-danger"></span>
+						</div>
+						<div class="form-group">
+							<label asp-for="Input.Password" class="form-label" style="color:aliceblue"></label>
+							<input asp-for="Input.Password" class="form-control" autocomplete="current-password" aria-required="true" />
+							<span asp-validation-for="Input.Password" class="text-danger"></span>
+						</div>
+						<div class="form-check mb-2">
+							<label asp-for="Input.RememberMe" class="form-label" style="color:aliceblue">
+								<input class="form-check-input" asp-for="Input.RememberMe" />
+								@Html.DisplayNameFor(m => m.Input.RememberMe)
+							</label>
+						</div>
+						<button type="submit" class="btn btn-light submit mb-4" style="background-color:aliceblue" bg-light>Log in</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!--//main-->
+	<!--footer-->
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<!---->
+	<!-- js -->
+	<script src="~/CoreBlogTema/js/jquery-2.2.3.min.js"></script>
+	<!-- //js -->
+	<!--/ start-smoth-scrolling -->
+	<script src="~/CoreBlogTema/js/move-top.js"></script>
+	<script src="~/CoreBlogTema/js/easing.js"></script>
+	<script>
+		jQuery(document).ready(function ($) {
+			$(".scroll").click(function (event) {
+				event.preventDefault();
+				$('html,body').animate({
+					scrollTop: $(this.hash).offset().top
+				}, 900);
+			});
+		});
+	</script>
+	<!--// end-smoth-scrolling -->
+
+	<script>
+		$(document).ready(function () {
+			/*
+									var defaults = {
+											containerID: 'toTop', // fading element id
+										containerHoverID: 'toTopHover', // fading element hover id
+										scrollSpeed: 1200,
+										easingType: 'linear'
+										};
+									*/
+
+			$().UItoTop({
+				easingType: 'easeOutQuart'
+			});
+
+		});
+	</script>
+	<a href="#home" class="scroll" id="toTop" style="display: block;">
+		<span id="toTopHover" style="opacity: 1;"> </span>
+	</a>
+
+	<!-- //Custom-JavaScript-File-Links -->
+	<script src="~/CoreBlogTema/js/bootstrap.js"></script>
+
+
+</body>
+
+</html>
