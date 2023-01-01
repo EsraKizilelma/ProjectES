@@ -1,4 +1,9 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<UserDetails> SignInManager
+@inject UserManager<UserDetails> UserManager
+
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -8,44 +13,126 @@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/ProjectES.styles.css" asp-append-version="true" />
 </head>
+<header>
+	<div class="top-bar_sub_w3layouts container-fluid">
+		<div class="row">
+			<div class="col-md-4 logo text-left">
+				<a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">MARS</a>
+				</a>
+			</div>
+			<div class="col-md-4 top-form mt-lg-4 mt-md-1 mt-0">
+					@if (SignInManager.IsSignedIn(User))
+					{
+						<span class="">
+							<form class="form-inline mx-lg-2 mx-md-2 mx-1" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+								<button type="submit" class="nav-link btn btn-link text-dark">Logout</button>
+									<i class="fa-light fa-arrow-up-left-from-circle"></i>
+							    <a  class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index">Profil Düzenle</a>
+									<i class="fa-thin fa-user-pen"></i>
+							</form>
+						</span>
+					}
+					else{
+						<span class="mx-lg-4 mx-md-2  mx-1">
+							<a class="text-dark" asp-area="Identity" asp-page="/Account/Register">
+							<i class="fas fa-lock"></i> Sign up
+							</a>
+						</span>
+						<span >
+							<a class="text-dark" asp-area="Identity" asp-page="/Account/Login">
+							<i class="far fa-user"></i> Log in
+							</a>
+						</span>
+					}
+			</div>
+			<div class="col-md-4 log-icons text-right">
+
+				<ul class="social_list1 mt-3">
+
+					<li>
+						<a href="#" class="facebook1 mx-2">
+							<i class="fab fa-facebook-f"></i>
+
+						</a>
+					</li>
+					<li>
+						<a href="#" class="twitter2">
+							<i class="fab fa-twitter"></i>
+
+						</a>
+					</li>
+					<li>
+						<a href="#" class="dribble3 mx-2">
+							<i class="fab fa-dribbble"></i>
+						</a>
+					</li>
+					<li>
+						<a href="#" class="pin">
+							<i class="fab fa-pinterest-p"></i>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div class="header_top" id="home">
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+			<button class="navbar-toggler navbar-toggler-right mx-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+					aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item">
+						<a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Index">About
+							<span class="sr-only">(current)</span>
+						</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+					</li>
+
+					@if (User.Identity.IsAuthenticated)
+					{
+						if (User.IsInRole("admin"))
+						{
+							<li class="nav-item dropdown">
+								<a class="nav-link text-white dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Subject</a>
+								<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+									<a class="dropdown-item" href="#"></a>
+									<a class="dropdown-item text-dark" asp-area="" asp-controller="Subject2" asp-action="Index">Subject</a>
+								<div class="dropdown-divider"></div>
+									<a class="dropdown-item text-dark" asp-area="" asp-controller="Assay" asp-action="Index">Assay</a>
+								<div class="dropdown-divider"></div>
+									<a class="dropdown-item text-dark" asp-area="" asp-controller="CallAssayApi" asp-action="Index">Assay(Api)</a>
+								</div>
+							</li>
+						}
+					}
+				</ul>
+				<form action="#" method="post" class="form-inline my-2 my-lg-0 header-search">
+					<input class="form-control mr-sm-2" type="search" placeholder="Search here..." name="Search" required="">
+					<button class="btn btn1 my-2 my-sm-0" type="submit">
+						<i class="fas fa-search"></i>
+					</button>
+				</form>
+			</div>
+		</nav>
+	</div>
+</header>
+<!--//header-->
+<!--/banner-->
+<div class="banner-inner">
+</div>
+<ol class="breadcrumb">
+	<li class="breadcrumb-item">
+		<a href="index.html">Home</a>
+	</li>
+	<li class="breadcrumb-item active">About</li>
+</ol>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">MARS</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                        @if (User.Identity.IsAuthenticated)
-                        {
-                            if(User.IsInRole("admin"))
-                            {
-                                <li class="nav-item">
-                                    <a class="nav-link text-dark" asp-area="" asp-controller="Subject2" asp-action="Index">Subject</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link text-dark" asp-area="" asp-controller="Assay" asp-action="Index">Assay</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link text-dark" asp-area="" asp-controller="CallAssayApi" asp-action="Index">Assay(api)</a>
-                                </li>
-                            }
-                        }
-                    </ul>
-                    <partial name="_LoginPartial" />
-                </div>
-            </div>
-        </nav>
-    </header>
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
@@ -54,7 +141,7 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2022 - ProjectES - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            &copy; 2022 - <a class="text-white" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>

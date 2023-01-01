@@ -8,6 +8,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Include="wwwroot\CoreBlogTema\ProjectES\.vs\ProjectSettings.json" />
+    <Content Include="wwwroot\CoreBlogTema\ProjectES\.vs\VSWorkspaceState.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\CoreBlogTema\ProjectES\.vs\ProjectES\FileContentIndex\9a913e2e-dd2f-4829-bdbc-1abc1215c0da.vsidx" />
+    <None Include="wwwroot\CoreBlogTema\ProjectES\.vs\ProjectES\FileContentIndex\read.lock" />
+    <None Include="wwwroot\CoreBlogTema\ProjectES\.vs\slnx.sqlite" />
+    <None Include="wwwroot\CoreBlogTema\ProjectES\ProjectES.sln" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Authentication.Certificate" Version="6.0.12" />
     <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="6.0.10" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.12" />
@@ -19,6 +31,11 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.11" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\CoreBlogTema\ProjectES\.vs\ProjectES\FileContentIndex\merges\" />
+    <Folder Include="wwwroot\CoreBlogTema\ProjectES\.vs\ProjectES\v17\" />
   </ItemGroup>
 
 </Project>
